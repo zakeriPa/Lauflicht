@@ -30,14 +30,55 @@
    <widget class="QLabel" name="blinkLabel">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>200</y>
+      <x>290</x>
+      <y>190</y>
       <width>68</width>
       <height>22</height>
      </rect>
     </property>
     <property name="text">
      <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSlider" name="speedSlider">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="speedLabel">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>70</y>
+      <width>68</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -66,5 +107,22 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>speedSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>speedLabel</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>259</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>310</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
